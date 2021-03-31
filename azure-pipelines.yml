@@ -11,4 +11,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Write-Host "Variable: $(${env:PASSWORD})"
+      Write-Host "Variable: $(PASSWORD)"
+  env:
+    PASSWORD: $(password)
