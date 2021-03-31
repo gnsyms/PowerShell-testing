@@ -20,7 +20,7 @@ steps:
       Write-host $username
       Write-host $password
       $encpassword = convertto-securestring -String $password -AsPlainText -Force
-      $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password
+      $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $encpassword
       Connect-PnPOnline -Url "https://svly.sharepoint.com/sites/gnsyms" -Credentials $cred
       $web = Get-PnPWeb
       Write-Host "Site title: $($web.Title)"
