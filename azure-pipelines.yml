@@ -14,7 +14,8 @@ steps:
       Install-Module PnP.PowerShell -AllowPrerelease -Scope "CurrentUser" -Verbose -AllowClobber -Force
       $username = "gnsyms@svly.onmicrosoft.com"
       $password = "$env:PASSWORD"
-      $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password
+      $encpassword = convertto-securestring -String $password -AsPlainText -Force
+      $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $encpassword
       Connect-PnPOnline -Url "https://svly.sharepoint.com/sites/gnsyms" -Credentials $cred
       $web = Get-PnPWeb
       Write-Host "Site title: $($web.Title)"
