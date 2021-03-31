@@ -3,9 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-variables: 
-  PASSWORD: $(password)
-  USERNAME: $(username)
+
 steps:
 - task : PowerShell@2
   inputs:
