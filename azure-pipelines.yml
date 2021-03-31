@@ -12,11 +12,11 @@ steps:
     targetType: 'inline'
     script: |
       Install-Module PnP.PowerShell -AllowPrerelease -Scope "CurrentUser" -Verbose -AllowClobber -Force
-      $username = "gnsyms@svly.onmicrosoft.com"
+      $username = "sandeep@mytestdomain157.onmicrosoft.com"
       $password = "$env:PASSWORD"
       $encpassword = convertto-securestring -String $password -AsPlainText -Force
       $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $encpassword
-      Connect-PnPOnline -Url "https://svly.sharepoint.com/sites/gnsyms" -Credentials $cred
+      Connect-PnPOnline -Url "https://mytestdomain157.sharepoint.com/sites/comm1" -Credentials $cred
       $web = Get-PnPWeb
       Write-Host "Site title: $($web.Title)"
 
