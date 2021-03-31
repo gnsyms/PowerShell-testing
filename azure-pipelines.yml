@@ -15,8 +15,8 @@ steps:
     targetType: 'inline'
     script: |
       Install-Module PnP.PowerShell -AllowPrerelease -Scope "CurrentUser" -Verbose -AllowClobber -Force
-      $username = $env:USERNAME
-      $password = $env:PASSWORD
+      $username = "gnsyms@svly.onmicrosoft.com"
+      $password = "CRE@tive707"
       Write-host $username
       Write-host $password
       $encpassword = convertto-securestring -String $password -AsPlainText -Force
