@@ -15,7 +15,7 @@ steps:
       $password = "$env:PASSWORD"
       $encpassword = convertto-securestring -String $password -AsPlainText -Force
       try{
-      Connect-PnPOnline -Url "https://svly.sharepoint.com/sites/gnsyms/" -ClientId 5d8e4d1b-a91d-4cba-9727-4066bcb1cd0d -CertificatePath C:\Users\91748\Desktop\PowerShell.pfx -CertificatePassword $encpassword -Tenant 'svly.onmicrosoft.com'
+      Connect-PnPOnline -Url "https://svly.sharepoint.com/sites/gnsyms/" -ClientId 5d8e4d1b-a91d-4cba-9727-4066bcb1cd0d -CertificatePath "$(System.DefaultWorkingDirectory)\PowerShell.pfx" -CertificatePassword $encpassword -Tenant 'svly.onmicrosoft.com'
       $web = Get-PnPWeb
       Write-Host "Site title: $($web.Title)"
       }catch
